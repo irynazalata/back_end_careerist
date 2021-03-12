@@ -25,7 +25,8 @@ async function removeComment(req, res) {
       params: { commentId },
     } = req;
     await Comment.findByIdAndDelete(commentId);
-    res.send("Deleted");
+    const comments = await Comment.find();
+    res.send(comments);
   } catch (error) {
     res.status(400).send(error.message);
   }
