@@ -26,6 +26,7 @@ function connectMiddlewares(app) {
   app.use(express.json());
   app.use(cors({ origin: "*" }));
   app.use(logger("dev"));
+  app.use(express.static("index.html"));
 }
 
 function declareRoutes(app) {
