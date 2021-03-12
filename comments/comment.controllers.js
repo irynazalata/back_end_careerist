@@ -4,7 +4,6 @@ async function getComments(req, res) {
   try {
     const comments = await Comment.find();
     res.json(comments);
-    res.send("<h1>HELLO</h1>");
   } catch (error) {
     res.status(400).send(error);
   }
