@@ -26,11 +26,10 @@ function connectMiddlewares(app) {
   app.use(express.json());
   app.use(cors({ origin: "*" }));
   app.use(logger("dev"));
-  app.use("/hello", express.static("./index.html"));
 }
 
 function declareRoutes(app) {
-  app.use("", commentsRoutes);
+  app.use("/", commentsRoutes);
 }
 
 async function connectToDb() {

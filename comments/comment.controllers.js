@@ -19,8 +19,17 @@ async function addComment(req, res) {
     res.status(400).send(error.message);
   }
 }
+async function removeComment(req, res) {
+  const {
+    params: { commentId },
+  } = req;
+
+  await Comment.findByIdAndDelete(commentId);
+  res.send(`Comment was deleted`);
+}
 
 export default {
   getComments,
   addComment,
+  removeComment,
 };
