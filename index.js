@@ -8,7 +8,7 @@ import commentsRoutes from "./comments/comment.routes.js";
 
 dotenv.config();
 
-const PORT = process.env.port || 8000;
+const PORT = process.env.PORT || 8080;
 
 function start() {
   const app = initServer();
@@ -48,7 +48,7 @@ async function connectToDb() {
 }
 
 function listen(app) {
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server is listening on port ${PORT}`);
   });
 }
