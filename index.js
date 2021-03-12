@@ -37,6 +37,7 @@ async function connectToDb() {
     await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useMongoClient: true,
     });
     console.log("Database connection successful");
   } catch (err) {
