@@ -1,7 +1,7 @@
 {
   "name": "back_end_careerist",
   "description": "",
-  "engines": { "node": "your-version" },
+  "engines": { "node": "index.js" },
   "type":"module",
   "version": "1.0.0",
   "main": "index.js",
