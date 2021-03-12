@@ -8,7 +8,7 @@ import commentsRoutes from "./comments/comment.routes.js";
 
 dotenv.config();
 
-const PORT = process.env.port || 8080;
+const PORT = process.env.port || 8000;
 
 function start() {
   const app = initServer();
