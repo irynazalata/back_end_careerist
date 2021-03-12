@@ -20,13 +20,15 @@ async function addComment(req, res) {
   }
 }
 async function removeComment(req, res) {
-  console.log("req", req);
-  const {
-    params: { commentId },
-  } = req;
-  console.log("commentId", commentId);
-  await Comment.findByIdAndDelete(commentId);
-  res.send(`Comment was deleted`);
+  try {
+    const {
+      params: { commentId },
+    } = req;
+    await Comment.findByIdAndDelete(commentId);
+    res.send("Deleted");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 }
 
 export default {

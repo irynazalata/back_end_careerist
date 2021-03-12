@@ -5,6 +5,6 @@ const router = Router();
 
 router.post("/", CommentController.addComment);
 router.get("/", CommentController.getComments);
-router.delete("/", CommentController.removeComment);
+router.delete("/:commentId", CommentController.removeComment);
 
 export default router;
