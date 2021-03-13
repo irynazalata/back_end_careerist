@@ -16,6 +16,9 @@ const CommentSchema = new Schema({
     type: Number,
     required: true,
   },
+  token: {
+    type: String,
+  },
 });
 
 CommentSchema.plugin(mongoosePaginate);
