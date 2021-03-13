@@ -16,7 +16,6 @@ async function getComments(req, res) {
 async function addComment(req, res) {
   try {
     const { body } = req;
-    console.log(req);
     const newComment = await Comment.create(body);
     console.log(newComment);
     const token = jwt.sign(
@@ -25,6 +24,7 @@ async function addComment(req, res) {
       },
       process.env.JWT_SECRET
     );
+    console.log(process.env.JWT_SECRET);
     await Comment.findByIdAndUpdate(newComment._id, { token: token });
     const addedComment = await Comment.findById(newComment._id);
     res.json(addedComment);
