@@ -1,5 +1,8 @@
 import Comment from "./Comment.js";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function getComments(req, res) {
   try {
@@ -13,6 +16,7 @@ async function getComments(req, res) {
 async function addComment(req, res) {
   try {
     const { body } = req;
+    console.log(req);
     const newComment = await Comment.create(body);
     console.log(newComment);
     const token = jwt.sign(
