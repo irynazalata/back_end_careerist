@@ -7,7 +7,7 @@ dotenv.config();
 async function getComments(req, res) {
   try {
     const comments = await Comment.find();
-    res.json(comments);
+    res.json(comments) / send("You are not allowed to see this");
   } catch (error) {
     res.status(400).send(error);
   }
